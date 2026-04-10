@@ -46,16 +46,50 @@ sh build.sh
 
 ## Codex で作成した手順
 
-今回 `Codex` でこのプロジェクトに対して行った作業は次のとおりです。
+ターミナルを開いて、`Codex CLI` を使って今回の内容を再現する場合の流れです。
 
-1. `game.c` に、球が `Space` キーでジャンプし、横から来る敵を避けるゲーム本体を実装
-2. `build.sh` を追加して、macOS 向けのネイティブビルドを1コマンド化
-3. `README.md` を日本語で作成し、遊び方とビルド方法を整理
-4. `raylib` のライセンスを確認し、README に注意点を追記
-5. `LICENSE` を追加し、`game.c` を `CC0 1.0 Universal` 相当として明記
-6. `.gitignore` を追加し、生成された実行ファイル `jumpgame` を除外
-7. `game.c` に `--capture` モードを追加し、README 用スクリーンショットを生成
-8. `screenshots/gameplay.png` を README に掲載
+1. ターミナルを開く
+2. [OpenAI](https://openai.com/ja-JP/) 公式の [Codex ドキュメント](https://developers.openai.com/codex/quickstart)に従って `Codex CLI` をインストールする
+3. 作業用ディレクトリを作成して移動する
+
+```sh
+mkdir jumpgame
+cd jumpgame
+```
+
+4. `raylib.h` と `libraylib.a` を配置した状態で `codex` を起動する
+5. 以降、Codex に次の依頼を順に出す
+
+```text
+raylibを使って丸い球がスペースキーでジャンプして、横からくる敵を避けるゲームをつくって
+README.md 日本語で書いて
+raylibのライセンスについても確認して追記して
+game.c は、CC0またはそれ相当のものとします。LICENSE追加して
+実行ファイルはgitに含めないようにして
+ビルドスクリプトは1行にして
+キャプチャーを撮ってREADME.mdに加えて
+今回 codex で作った手順をREADMEの中にまとめて
+ターミナルを開き、condexをインストールするところからの手順にして
+```
+
+6. ネイティブ版をビルドして実行する
+
+```sh
+sh build.sh
+./jumpgame
+```
+
+7. README 用キャプチャを撮る場合は次を実行する
+
+```sh
+./jumpgame --capture screenshots/gameplay.png
+```
+
+補足:
+
+- `Codex CLI` の導入方法や最新の利用条件は変更される可能性があるため、インストール部分は OpenAI 公式ドキュメントを参照してください
+- OpenAI 公式ドキュメントでは、Codex は CLI や IDE から利用できると案内されています
+- OpenAI 公式ドキュメントでは、MCP 設定例として `codex mcp add ...` 形式のコマンドが案内されています
 
 ## ライセンス
 
