@@ -44,6 +44,19 @@ sh build.sh
 - 敵は画面右から左へ移動します
 - スコアが上がると敵の速度も少しずつ上がります
 
+## Codex で作成した手順
+
+今回 `Codex` でこのプロジェクトに対して行った作業は次のとおりです。
+
+1. `game.c` に、球が `Space` キーでジャンプし、横から来る敵を避けるゲーム本体を実装
+2. `build.sh` を追加して、macOS 向けのネイティブビルドを1コマンド化
+3. `README.md` を日本語で作成し、遊び方とビルド方法を整理
+4. `raylib` のライセンスを確認し、README に注意点を追記
+5. `LICENSE` を追加し、`game.c` を `CC0 1.0 Universal` 相当として明記
+6. `.gitignore` を追加し、生成された実行ファイル `jumpgame` を除外
+7. `game.c` に `--capture` モードを追加し、README 用スクリーンショットを生成
+8. `screenshots/gameplay.png` を README に掲載
+
 ## ライセンス
 
 このゲーム本体のコード `game.c` は、`CC0 1.0 Universal` 相当として公開しています。詳細は `LICENSE` を参照してください。
